@@ -27,6 +27,7 @@ public class GoodTest {
         assertEquals("Name is too short or big", constraintViolations.iterator().next().getMessage());
         good.setName(null);
         constraintViolations = validator.validate(good);
+        assertNull( good.getName());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Enter a name", constraintViolations.iterator().next().getMessage());
     }
@@ -39,6 +40,7 @@ public class GoodTest {
         assertEquals("Is it free?", constraintViolations.iterator().next().getMessage());
         good.setPrice(null);
         constraintViolations = validator.validate(good);
+        assertNull( good.getPrice());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Enter a price", constraintViolations.iterator().next().getMessage());
     }
@@ -51,6 +53,7 @@ public class GoodTest {
         assertEquals("Manufacturer is too short or big", constraintViolations.iterator().next().getMessage());
         good.setManufacturer(null);
         constraintViolations = validator.validate(good);
+        assertNull( good.getManufacturer());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Enter a manufacturer", constraintViolations.iterator().next().getMessage());
     }

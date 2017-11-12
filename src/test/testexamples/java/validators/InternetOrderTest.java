@@ -32,6 +32,7 @@ public class InternetOrderTest {
         assertEquals("Invalid date", constraintViolations.iterator().next().getMessage());
         order.setOrderDate(null);
         constraintViolations = validator.validate(order);
+        assertNull( order.getOrderDate());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Enter a date", constraintViolations.iterator().next().getMessage());
     }
@@ -40,6 +41,7 @@ public class InternetOrderTest {
     public void testMap() {
         order.setGoodsQuantity(null);
         Set<ConstraintViolation<InternetOrder>> constraintViolations = validator.validate(order);
+        assertNull( order.getGoodsQuantity());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Enter a map with at least 1 element", constraintViolations.iterator().next().getMessage());
     }
@@ -51,6 +53,7 @@ public class InternetOrderTest {
         assertEquals( 4, constraintViolations.size() );
         order.setBuyer(null);
         constraintViolations = validator.validate(order);
+        assertNull( order.getBuyer());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Enter a buyer", constraintViolations.iterator().next().getMessage());
     }
@@ -63,6 +66,7 @@ public class InternetOrderTest {
         assertEquals("Is it free?", constraintViolations.iterator().next().getMessage());
         order.setFinalPrice(null);
         constraintViolations = validator.validate(order);
+        assertNull( order.getFinalPrice());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Enter a price", constraintViolations.iterator().next().getMessage());
     }
@@ -75,6 +79,7 @@ public class InternetOrderTest {
         assertEquals("Invalid url", constraintViolations.iterator().next().getMessage());
         order.setWebSiteUrl(null);
         constraintViolations = validator.validate(order);
+        assertNull( order.getWebSiteUrl());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Enter an url", constraintViolations.iterator().next().getMessage());
     }
@@ -83,6 +88,7 @@ public class InternetOrderTest {
     public void testUUID() {
         order.setOrderId(null);
         Set<ConstraintViolation<InternetOrder>> constraintViolations = validator.validate(order);
+        assertNull( order.getOrderId());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Enter an orderId", constraintViolations.iterator().next().getMessage());
     }
@@ -91,7 +97,16 @@ public class InternetOrderTest {
     public void testDelivery() {
         order.setDeliveryType(null);
         Set<ConstraintViolation<InternetOrder>> constraintViolations = validator.validate(order);
+        assertNull( order.getDeliveryType());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Select a deliveryType", constraintViolations.iterator().next().getMessage());
+    }
+
+    @Test
+    public void testMark() {
+        order.setFeedbackMark(6);
+        Set<ConstraintViolation<InternetOrder>> constraintViolations = validator.validate(order);
+        assertEquals( 1, constraintViolations.size() );
+        assertEquals("Invalid value of mark", constraintViolations.iterator().next().getMessage());
     }
 }

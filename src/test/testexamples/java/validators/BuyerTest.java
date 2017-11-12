@@ -34,6 +34,7 @@ public class BuyerTest {
         assertEquals("Is your name really so short?", constraintViolations.iterator().next().getMessage());
         buyer.setFullName(null);
         constraintViolations = validator.validate(buyer);
+        assertNull( buyer.getFullName());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Enter your fullName", constraintViolations.iterator().next().getMessage());
     }
@@ -46,6 +47,7 @@ public class BuyerTest {
         assertEquals("Number is invalid", constraintViolations.iterator().next().getMessage());
         buyer.setPhoneNumber(null);
         constraintViolations = validator.validate(buyer);
+        assertNull( buyer.getPhoneNumber());
         assertEquals( 1, constraintViolations.size() );
         assertEquals("Enter your phoneNumber", constraintViolations.iterator().next().getMessage());
     }
