@@ -28,7 +28,7 @@ public class InternetOrder {
     @Getter @Setter private BigDecimal finalPrice;
 
     @javax.validation.constraints.NotEmpty(message = "Enter an url")
-    @Pattern(regexp = "^(http://|https://|www.)?((\\S+/)+|\\S)(\\S*)$", message = "Invalid url")
+    @Pattern(regexp = "^(http://|https://|www.)?((((\\S+/)+\\S)(\\S*))|(\\S*\\.\\S*))$", message = "Invalid url")
     @Getter @Setter private String webSiteUrl;
 
     @NotNull(message = "Enter an orderId")
