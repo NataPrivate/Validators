@@ -1,15 +1,11 @@
 package example.java.validators;
 
 import lombok.*;
-import java.lang.annotation.*;
 import java.math.BigDecimal;
 import java.util.*;
 import javax.validation.constraints.*;
 import javax.validation.*;
 import org.hibernate.validator.constraints.*;
-import static java.lang.annotation.ElementType.*;
-import static java.lang.annotation.RetentionPolicy.*;
-
 
 
 @AllArgsConstructor

@@ -7,9 +7,10 @@ import java.math.BigDecimal;
 import java.util.*;
 import static org.junit.Assert.*;
 
+
 public class InternetOrderTest {
-    Validator validator;
-    InternetOrder order;
+    private Validator validator;
+    private InternetOrder order;
 
     @Before
     public void init() {

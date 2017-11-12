@@ -5,6 +5,7 @@ import javax.validation.constraints.*;
 import org.hibernate.validator.constraints.*;
 import java.math.BigDecimal;
 
+
 @AllArgsConstructor
 public class Good {
     @javax.validation.constraints.NotEmpty(message = "Enter a name")

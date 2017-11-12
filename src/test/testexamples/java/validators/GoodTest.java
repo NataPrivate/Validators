@@ -9,8 +9,8 @@ import static org.junit.Assert.*;
 
 
 public class GoodTest {
-    Validator validator;
-    Good good;
+    private Validator validator;
+    private Good good;
 
     @Before
     public void init() {

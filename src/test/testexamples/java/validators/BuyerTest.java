@@ -8,8 +8,8 @@ import static org.junit.Assert.*;
 
 
 public class BuyerTest {
-    Validator validator;
-    Buyer buyer;
+    private Validator validator;
+    private Buyer buyer;
 
     @Before
     public void init() {

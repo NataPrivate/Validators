@@ -4,6 +4,7 @@ import lombok.*;
 import javax.validation.constraints.*;
 import org.hibernate.validator.constraints.*;
 
+
 @AllArgsConstructor
 public class Buyer {
     @javax.validation.constraints.Email(message = "Email is invalid")
