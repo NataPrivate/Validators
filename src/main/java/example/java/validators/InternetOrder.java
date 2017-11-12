@@ -41,7 +41,7 @@ public class InternetOrder {
     @NotNull(message = "Select a deliveryType")
     @Getter @Setter private Delivery deliveryType;
 
-    @Range(min = 1, max = 5)
+    @Range(min = 1, max = 5, message = "Invalid value of mark")
     @Getter @Setter private int feedbackMark;
 
     @Getter @Setter private char[] comment;
